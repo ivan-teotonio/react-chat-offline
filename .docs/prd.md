@@ -130,9 +130,9 @@ export type ChatState = {
 As tarefas estão ordenadas de forma que cada etapa gere algo testável na tela antes de passar para a próxima.
 
 ### Fase 1 — Estrutura e tipos (fundação)
-- [ ] **T1.1** Criar `src/types/message.ts` com `Sender`, `Message` e `ChatState`.
-- [ ] **T1.2** Limpar `src/App.tsx` e montar esqueleto do `App` com container centralizado (`max-w-2xl`, `mx-auto`) e fundo marrom claro da tela.
-- [ ] **T1.3** Criar componente `MessageBubble` recebe `Message` e renderiza texto + timestamp, alinhando conforme `sender` (usuário direita / robô esquerda).
+- [x] **T1.1** Criar `src/types/message.ts` com `Sender`, `Message` e `ChatState`.
+- [x] **T1.2** Limpar `src/App.tsx` e montar esqueleto do `App` com container centralizado (`max-w-2xl`, `mx-auto`) e fundo marrom claro da tela.
+- [x] **T1.3** Criar componente `MessageBubble` recebe `Message` e renderiza texto + timestamp, alinhando conforme `sender` (usuário direita / robô esquerda).
 
 ### Fase 2 — Histórico e estado vazio
 - [ ] **T2.1** Criar `MessageList` que recebe a lista de mensagens, renderiza `MessageBubble` para cada uma e faz auto-scroll para o bottom quando a lista muda.

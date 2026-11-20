@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+@theme {
+  --color-brown-50: #f8f4ef;
+}

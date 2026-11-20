@@ -17,7 +17,7 @@
 
 | Item | Decisão |
 |------|---------|
-| Posicionamento do card de input | `position: fixed`, canto inferior-direito da viewport, sempre visível sobre o histórico |
+| Posicionamento do card de input | `position: fixed`, parte inferior da viewport, centralizado horizontalmente, sempre visível sobre o histórico |
 | Toggle usuário/robô | Segmented button (dois botões lado a lado: "Usuário" \| "Robô") |
 | Envio por teclado | `Enter` envia; `Shift + Enter` quebra linha (textarea de altura automática) |
 | Auto-scroll | Ao adicionar nova mensagem, o histórico rola automaticamente para o bottom |
@@ -65,7 +65,7 @@
 | Fundo da tela | Marrom claro (`bg-brown-50` ou similar) |
 | Container do chat | Largura máxima `2xl`, centralizado horizontalmente |
 | Card do input | Fundo branco, altura automática conforme o texto digitado |
-| Posicionamento do input | `fixed bottom-right` da viewport (sempre visível) |
+| Posicionamento do input | Fixo na parte inferior da viewport, centralizado horizontalmente (sempre visível) |
 | Alinhamento das mensagens | Usuário = direita; Robô = esquerda |
 | Borda do input (modo robô) | Roxa, quando o toggle "Robô" está ativo |
 | Botão enviar | Desabilitado (cinza) quando vazio; habilitado (cor primária) quando há texto |
@@ -135,30 +135,30 @@ As tarefas estão ordenadas de forma que cada etapa gere algo testável na tela 
 - [x] **T1.3** Criar componente `MessageBubble` recebe `Message` e renderiza texto + timestamp, alinhando conforme `sender` (usuário direita / robô esquerda).
 
 ### Fase 2 — Histórico e estado vazio
-- [ ] **T2.1** Criar `MessageList` que recebe a lista de mensagens, renderiza `MessageBubble` para cada uma e faz auto-scroll para o bottom quando a lista muda.
-- [ ] **T2.2** Criar `EmptyState` exibindo "Nenhuma mensagem ainda" quando a lista estiver vazia.
-- [ ] **T2.3** Integrar `MessageList` + `EmptyState` no `App` com estado inicial (ex: 1–2 mensagens fixas para testar alinhamento e scroll).
+- [x] **T2.1** Criar `MessageList` que recebe a lista de mensagens, renderiza `MessageBubble` para cada uma e faz auto-scroll para o bottom quando a lista muda.
+- [x] **T2.2** Criar `EmptyState` exibindo "Nenhuma mensagem ainda" quando a lista estiver vazia.
+- [x] **T2.3** Integrar `MessageList` + `EmptyState` no `App` com estado inicial (ex: 1–2 mensagens fixas para testar alinhamento e scroll).
 
 ### Fase 3 — Card de input e toggle
-- [ ] **T3.1** Criar `SenderToggle` (segmented button "Usuário" \| "Robô") que expõe o sender selecionado.
-- [ ] **T3.2** Criar `InputCard` (fundo branco, `fixed bottom-right`) contendo:
+- [x] **T3.1** Criar `SenderToggle` (segmented button "Usuário" \| "Robô") que expõe o sender selecionado.
+- [x] **T3.2** Criar `InputCard` (fundo branco, fixo na base e centralizado horizontalmente) contendo:
   - textarea de altura automática (`Enter` envia, `Shift+Enter` quebra linha),
   - `SenderToggle` à esquerda,
   - `SendButton` à direita.
-- [ ] **T3.3** Quando toggle = "Robô", aplicar borda roxa no `InputCard`.
-- [ ] **T3.4** Criar `SendButton` desabilitado quando não houver texto digitado.
+- [x] **T3.3** Quando toggle = "Robô", aplicar borda roxa no `InputCard`.
+- [x] **T3.4** Criar `SendButton` desabilitado quando não houver texto digitado.
 
 ### Fase 4 — Lógica de envio e integração
-- [ ] **T4.1** No `App`, implementar state `messages: Message[]` e função `addMessage(text, sender)` que gera `id`, `createdAt` e insere no topo/base da lista.
-- [ ] **T4.2** Conectar `InputCard` ao `App`: ao enviar, chama `addMessage` com o sender do toggle, limpa o input e reseta a altura.
-- [ ] **T4.3** Garantir auto-scroll após cada envio.
+- [x] **T4.1** No `App`, implementar state `messages: Message[]` e função `addMessage(text, sender)` que gera `id`, `createdAt` e insere no topo/base da lista.
+- [x] **T4.2** Conectar `InputCard` ao `App`: ao enviar, chama `addMessage` com o sender do toggle, limpa o input e reseta a altura.
+- [x] **T4.3** Garantir auto-scroll após cada envio.
 
 ### Fase 5 — Refinamento, acessibilidade e quality gates
-- [ ] **T5.1** Ajustar responsividade (container 2xl, input fixo não cobrir mensagens em telas pequenas — considerar `pb` no container ou comportamento em mobile).
-- [ ] **T5.2** Adicionar `aria-label` e foco visível nos botões/input.
-- [ ] **T5.3** Rodar `npm run lint` (oxlint) e corrigir avisos/erros.
-- [ ] **T5.4** Rodar `npm run build` (tsc + vite build) e garantir build limpo.
-- [ ] **T5.5** Revisão visual final contra o brain-dump (fundo marrom, input branco, borda roxa no robô, mensagens alinhadas corretamente).
+- [x] **T5.1** Ajustar responsividade (container 2xl, input fixo não cobrir mensagens em telas pequenas — considerar `pb` no container ou comportamento em mobile).
+- [x] **T5.2** Adicionar `aria-label` e foco visível nos botões/input.
+- [x] **T5.3** Rodar `npm run lint` (oxlint) e corrigir avisos/erros.
+- [x] **T5.4** Rodar `npm run build` (tsc + vite build) e garantir build limpo.
+- [x] **T5.5** Revisão visual final contra o brain-dump (fundo marrom, input branco, borda roxa no robô, mensagens alinhadas corretamente).
 
 ---
 

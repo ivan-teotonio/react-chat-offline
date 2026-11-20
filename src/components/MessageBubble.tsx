@@ -4,7 +4,7 @@ export function MessageBubble({ message }: { message: Message }) {
   const isUser = message.sender === "user";
 
   return (
-    <div className={`mb-4 ${isUser ? "text-right" : "text-left"}`}>
+    <div className={isUser ? "text-right" : "text-left"}>
       <div
         className={`inline-block max-w-[80%] px-4 py-2 rounded-xl ${
           isUser

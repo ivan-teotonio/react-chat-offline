@@ -1,32 +1,72 @@
-# React + TypeScript + Vite
+# Chat Offline
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Chat de janela única onde a mesma mensagem pode ser enviada como **Usuário** ou como **Robô**, escolhida por um toggle no card de input. Mensagens de usuário aparecem à direita e mensagens de robô à esquerda.
 
-Currently, two official plugins are available:
+Não há backend nem persistência: o histórico vive apenas no estado do React e some ao recarregar a página.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Stack
 
-## React Compiler
+- Vite
+- React 19
+- TypeScript (strict)
+- Tailwind CSS v4
+- Oxlint
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Funcionalidades
 
-## Expanding the Oxlint configuration
+- Toggle segmentado **Usuário / Robô**; ao selecionar "Robô", o card de input recebe borda roxa.
+- Textarea de altura automática: `Enter` envia e `Shift + Enter` quebra linha.
+- Botão **Enviar** desabilitado enquanto não há texto não-vazio.
+- Histórico com timestamp por mensagem, alinhamento por remetente e auto-scroll a cada envio.
+- Estado vazio com a mensagem "Nenhuma mensagem ainda".
+- Layout responsivo: container centralizado (`max-w-2xl`) e card fixo na parte inferior, alinhado ao centro horizontal da tela.
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Requisitos
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+- Node.js (versão LTS recomendada) e npm.
+
+## Como executar
+
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Acesse o endereço exibido no terminal (por padrão, `http://localhost:5173`).
+
+## Scripts
+
+| Comando | Descrição |
+|---------|-----------|
+| `npm run dev` | Inicia o servidor de desenvolvimento com hot reload. |
+| `npm run build` | Roda `tsc -b` e gera o build de produção em `dist/`. |
+| `npm run lint` | Roda o Oxlint no projeto. |
+| `npm run preview` | Serve localmente o build gerado em `dist/`. |
+
+## Estrutura
+
+```
+src/
+  main.tsx                 ponto de entrada
+  index.css                import do Tailwind + tema (cor brown-50)
+  App.tsx                  componente raiz: estado das mensagens e addMessage
+  types/
+    message.ts             tipos Sender, Message e ChatState
+  components/
+    MessageList.tsx        histórico com auto-scroll
+    MessageBubble.tsx      bolha individual com texto e timestamp
+    EmptyState.tsx         estado vazio
+    InputCard.tsx          card fixo: textarea, toggle e botão de enviar
+    SenderToggle.tsx       segmented button Usuário / Robô
+    SendButton.tsx         botão de envio
+.docs/
+  prd.md                   requisitos e tarefas (todas concluídas)
+  brain-dump.md            ideias originais do produto
+```
+
+`src/App.css` é um arquivo legado do template inicial e não é importado.
+
+## Documentação
+
+- [PRD](.docs/prd.md) — escopo, decisões de UX e checklist de implementação.
+- [Brain dump](.docs/brain-dump.md) — visão original do produto.

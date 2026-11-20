@@ -15,7 +15,7 @@ Não há backend nem persistência: o histórico vive apenas no estado do React 
 ## Funcionalidades
 
 - Toggle segmentado **Usuário / Robô**: no modo usuário o card tem fundo cinza claro, e no modo robô fica branco com borda roxa.
-- Textarea de altura automática: `Enter` envia e `Shift + Enter` quebra linha.
+- Textarea de altura automática até `8rem`; ao passar disso, aparece scroll no campo. `Enter` envia e `Shift + Enter` quebra linha.
 - Botão **Enviar** desabilitado enquanto não há texto não-vazio.
 - Histórico com timestamp por mensagem, alinhamento por remetente e auto-scroll a cada envio.
 - Estado vazio com a mensagem "Nenhuma mensagem ainda".

@@ -64,7 +64,7 @@
 |----------|---------------|
 | Fundo da tela | Marrom claro (`bg-brown-50` ou similar) |
 | Container do chat | Largura máxima `2xl`, centralizado horizontalmente |
-| Card do input | Usuário: fundo cinza claro; Robô: fundo branco. Altura automática conforme o texto digitado |
+| Card do input | Usuário: fundo cinza claro; Robô: fundo branco. Altura automática até `8rem`, com scroll quando o texto excede |
 | Posicionamento do input | Fixo na parte inferior da viewport, centralizado horizontalmente (sempre visível) |
 | Alinhamento das mensagens | Usuário = direita; Robô = esquerda |
 | Borda do input (modo robô) | Roxa, quando o toggle "Robô" está ativo |

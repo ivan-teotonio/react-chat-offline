@@ -12,7 +12,9 @@ export function MessageBubble({ message }: { message: Message }) {
             : "bg-white text-gray-900 border border-gray-200 rounded-tl-none"
         }`}
       >
-        <p className="text-sm leading-relaxed">{message.text}</p>
+        <p className="text-sm leading-relaxed break-words whitespace-pre-wrap">
+          {message.text}
+        </p>
         <span className="text-xs opacity-60 block mt-1">
           {new Date(message.createdAt).toLocaleTimeString("pt-BR", {
             hour: "2-digit",

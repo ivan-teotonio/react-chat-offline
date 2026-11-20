@@ -31,7 +31,7 @@ export function InputCard({ onSend }: InputCardProps) {
   }
 
   function handleKeyDown(event: KeyboardEvent<HTMLTextAreaElement>) {
-    if (event.key === "Enter" && !event.shiftKey) {
+    if (event.key.toLowerCase() === "enter" && !event.shiftKey) {
       event.preventDefault();
       handleSend();
     }
@@ -56,7 +56,7 @@ export function InputCard({ onSend }: InputCardProps) {
           rows={1}
           aria-label="Mensagem"
           placeholder="Digite uma mensagem..."
-          className="min-h-10 min-w-0 flex-1 resize-none overflow-hidden rounded-md bg-transparent px-2 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+          className="max-h-32 min-h-10 min-w-0 flex-1 resize-none overflow-y-auto rounded-md bg-transparent px-2 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
         />
 
         <SendButton disabled={!canSend} onClick={handleSend} />

@@ -39,7 +39,7 @@ export function InputCard({ onSend }: InputCardProps) {
 
   return (
     <div
-      className={`fixed bottom-4 left-1/2 z-10 flex w-[calc(100%-2rem)] max-w-md -translate-x-1/2 flex-col gap-2 rounded-2xl border-2 p-3 shadow-lg sm:flex-row sm:items-end ${
+      className={`fixed bottom-8 left-1/2 z-10 flex w-[calc(100%-2rem)] max-w-2xl -translate-x-1/2 flex-col gap-2 rounded-2xl border-2 p-3 shadow-lg sm:flex-row sm:items-end ${
         sender === "robot"
           ? "border-purple-500 bg-white"
           : "border-transparent bg-gray-50"

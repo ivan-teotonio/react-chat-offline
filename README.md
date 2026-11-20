@@ -19,7 +19,7 @@ Não há backend nem persistência: o histórico vive apenas no estado do React 
 - Botão **Enviar** desabilitado enquanto não há texto não-vazio.
 - Histórico com timestamp por mensagem, alinhamento por remetente e auto-scroll a cada envio.
 - Estado vazio com a mensagem "Nenhuma mensagem ainda".
-- Layout responsivo: container centralizado (`max-w-2xl`) e card fixo na parte inferior, alinhado ao centro horizontal da tela.
+- Layout responsivo: container e card centralizados (`max-w-2xl`), com o card fixo a `2rem` da base da tela.
 
 ## Requisitos
 

@@ -18,7 +18,7 @@ export function MessageList({ messages }: { messages: Message[] }) {
       ref={listRef}
       aria-label="Histórico de mensagens"
       aria-live="polite"
-      className="flex max-h-[60vh] flex-col gap-4 overflow-y-auto"
+      className="flex max-h-[70vh] flex-col gap-4 overflow-y-auto"
     >
       {messages.map((message) => (
         <MessageBubble key={message.id} message={message} />

@@ -17,7 +17,7 @@
 
 | Item | Decisão |
 |------|---------|
-| Posicionamento do card de input | `position: fixed`, parte inferior da viewport, centralizado horizontalmente, sempre visível sobre o histórico |
+| Posicionamento do card de input | `position: fixed`, a `2rem` da base da viewport, centralizado horizontalmente, sempre visível sobre o histórico |
 | Toggle usuário/robô | Segmented button (dois botões lado a lado: "Usuário" \| "Robô"). Modo usuário: fundo cinza claro no card; modo robô: fundo branco e borda roxa |
 | Envio por teclado | `Enter` envia; `Shift + Enter` quebra linha (textarea de altura automática) |
 | Auto-scroll | Ao adicionar nova mensagem, o histórico rola automaticamente para o bottom |
@@ -65,7 +65,7 @@
 | Fundo da tela | Marrom claro (`bg-brown-50` ou similar) |
 | Container do chat | Largura máxima `2xl`, centralizado horizontalmente |
 | Card do input | Usuário: fundo cinza claro; Robô: fundo branco. Altura automática até `8rem`, com scroll quando o texto excede |
-| Posicionamento do input | Fixo na parte inferior da viewport, centralizado horizontalmente (sempre visível) |
+| Posicionamento do input | Fixo a `2rem` da base da viewport, centralizado horizontalmente, largura máxima `2xl` (sempre visível) |
 | Alinhamento das mensagens | Usuário = direita; Robô = esquerda |
 | Borda do input (modo robô) | Roxa, quando o toggle "Robô" está ativo |
 | Botão enviar | Desabilitado (cinza) quando vazio; habilitado (cor primária) quando há texto |
